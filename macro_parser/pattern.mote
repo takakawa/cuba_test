@@ -1,0 +1,39 @@
+	<html>
+	<head>
+		<style type = "text/css">
+		div#container  {width:800px}
+		div#macro_div  {background-color:#EEEEEE;width:400px;height:250px;float:left;}
+		div#result_div   {background-color:#ffff99;width:400px;height:250px;float:left;}
+		div#call_div   {background-color:#AAAAAA;width:400px;height:250px;float:left;}
+		div#defs_div   {background-color:#ABABAB;width:400px;height:250px;float:left;}
+</style>
+	</head>
+	<body>
+
+	<form name = "form" method = "post" action = "#" id = "testform">
+		<input type = "submit" name = "submit" value = "submit"><br/>
+		<!--<input type= "file" name = "upload"><br />-->
+	<div  id = "container">
+		<div id="macro_div">
+		<h2 align = center >Macro Define</h2>
+		<textarea name="macro"  rows = 10 cols = 50 form="testform"></textarea> 
+		</div>
+		<div id="call_div">
+		<h2 align = center >call</h2>
+		<textarea name="call"  rows = 10 cols = 50 form="testform"></textarea> 
+		</div>
+		<div id ="result_div">
+		<h2 align = center>data</h2>
+		<textarea name="result"   rows = 10 cols = 50 form="testform">{{output}}</textarea> 
+		</div>
+		<div id ="defs_div">
+		<h2 align = center>defs</h2>
+		<textarea name="defs"  rows = 10 cols = 50 form="testform">{{defined_macro}}</textarea> 
+		</div>
+</div>
+</form>
+	
+	
+
+	</body>
+	</html>
