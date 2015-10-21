@@ -28,6 +28,7 @@ Cuba.define do
 			on param("macro") do |defs|
 				p defs
 				parse_defs(defs)
+				res.write(get_page)
 				end
 
 		       on param("call") do |calls|
