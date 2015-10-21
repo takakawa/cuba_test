@@ -15,25 +15,34 @@ Cuba.define do
 	
 
 	end
-	on post do 
-		on param("firstname"),param("lastname"),param("comment")do |f,l,txt|
-			res.write f
-			res.write l
-			res.write txt
-		end
-		on param("upload") do |upload|
-			file = File.open(upload[:tempfile])
-			res.write file.gets
-		end
-		on param("macro") ,param("call") do |defs,calls|
-			
-			p defs
-			p calls
-			res.write get_result(defs,calls)
+	on post do
+		
+		begin
+			on param("call"),param("macro") do |calls,defs|
+				p calls
+				p defs
+				parse_defs(defs)
+				res.write  exe_calls(calls)
 
+			end
+			on param("macro") do |defs|
+				p defs
+				parse_defs(defs)
+				end
+
+		       on param("call") do |calls|
+				p calls
+				res.write  exe_calls(calls)
+
+			end
+			
+			on true do
+				res.write  "INPUT ERR"
+			end
+		
+		 rescue => info
+			res.write "ERROR!!#{info}"
 		end
-		
-		
 
 	end
 	

@@ -1,0 +1,14 @@
+#define SPI_NUM (100)
+#define SPI_BASE      (0x10000000)
+#define SPI_BASE_6216 (0x20000000)
+#define SPI_RAM(ip) \
+    SPI_BASE+ip*0x16
+#define SD6219     0xFFFFFFFF
+#define SD6218     0
+#define SD6216     0
+#define CARR_NUM_6216  10
+#define CARR_NUM_6219  40
+#define CARR_NUM_6218  20
+#define CARR_NUM  (SD6219 & CARR_NUM_6219)\
+		+ (SD6218 & CARR_NUM_6218)\
+		+ (SD6216 & CARR_NUM_6216) 

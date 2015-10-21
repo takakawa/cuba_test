@@ -20,7 +20,7 @@
 		</div>
 		<div id="call_div">
 		<h2 align = center >call</h2>
-		<textarea name="call"  rows = 10 cols = 50 form="testform"></textarea> 
+		<textarea name="call"  rows = 10 cols = 50 form="testform">{{call}}</textarea> 
 		</div>
 		<div id ="result_div">
 		<h2 align = center>data</h2>
